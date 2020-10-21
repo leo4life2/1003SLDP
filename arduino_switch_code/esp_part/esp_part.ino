@@ -49,7 +49,7 @@ void loop() {
   }
   
   // We now create a URI for the request
-  String url = "https://dweet.io:443/get/latest/dweet/for/thisisourdoor";
+  String url = "https://dweet.io:443/get/latest/dweet/for/wiswitch";
 
   // Send request
 //  Serial.print("Requesting URL: ");
@@ -86,10 +86,11 @@ void handleResponse(String response){
   char* lock = strstr(response.c_str(), "\"lock\":");
   
   if (lock > 0){
-    char val = lock[7];
+    char val = lock[7]; // Get new value from JSON object
 //    Serial.println(val);
 
     if (val != prev_val){
+      // If value is not the same as previous one, trigger the motor
       Serial.print("val changed! now is: ");
       Serial.println(val);
 
