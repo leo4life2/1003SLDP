@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6D38446253C80CE00293BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D38445253C80CE00293BF9 /* AppDelegate.swift */; };
+		B6D38448253C80CF00293BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D38447253C80CF00293BF9 /* SceneDelegate.swift */; };
+		B6D3844A253C80CF00293BF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D38449253C80CF00293BF9 /* ViewController.swift */; };
+		B6D3844D253C80CF00293BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D3844B253C80CF00293BF9 /* Main.storyboard */; };
+		B6D3844F253C80D000293BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D3844E253C80D000293BF9 /* Assets.xcassets */; };
+		B6D38452253C80D000293BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D38450253C80D000293BF9 /* LaunchScreen.storyboard */; };
+		B6D3845D253C80D000293BF9 /* WiSwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D3845C253C80D000293BF9 /* WiSwitchTests.swift */; };
+		B6D38468253C80D000293BF9 /* WiSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D38467253C80D000293BF9 /* WiSwitchUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6D38459253C80D000293BF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6D3843A253C80CE00293BF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6D38441253C80CE00293BF9;
+			remoteInfo = WiSwitch;
+		};
+		B6D38464253C80D000293BF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6D3843A253C80CE00293BF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6D38441253C80CE00293BF9;
+			remoteInfo = WiSwitch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B6D38442253C80CE00293BF9 /* WiSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D38445253C80CE00293BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B6D38447253C80CF00293BF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B6D38449253C80CF00293BF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B6D3844C253C80CF00293BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B6D3844E253C80D000293BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6D38451253C80D000293BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B6D38453253C80D000293BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D38458253C80D000293BF9 /* WiSwitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiSwitchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D3845C253C80D000293BF9 /* WiSwitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiSwitchTests.swift; sourceTree = "<group>"; };
+		B6D3845E253C80D000293BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D38463253C80D000293BF9 /* WiSwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiSwitchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D38467253C80D000293BF9 /* WiSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiSwitchUITests.swift; sourceTree = "<group>"; };
+		B6D38469253C80D000293BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6D3843F253C80CE00293BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D38455253C80D000293BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D38460253C80D000293BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B6D38439253C80CE00293BF9 = {
+			isa = PBXGroup;
+			children = (
+				B6D38444253C80CE00293BF9 /* WiSwitch */,
+				B6D3845B253C80D000293BF9 /* WiSwitchTests */,
+				B6D38466253C80D000293BF9 /* WiSwitchUITests */,
+				B6D38443253C80CE00293BF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6D38443253C80CE00293BF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6D38442253C80CE00293BF9 /* WiSwitch.app */,
+				B6D38458253C80D000293BF9 /* WiSwitchTests.xctest */,
+				B6D38463253C80D000293BF9 /* WiSwitchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6D38444253C80CE00293BF9 /* WiSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				B6D38445253C80CE00293BF9 /* AppDelegate.swift */,
+				B6D38447253C80CF00293BF9 /* SceneDelegate.swift */,
+				B6D38449253C80CF00293BF9 /* ViewController.swift */,
+				B6D3844B253C80CF00293BF9 /* Main.storyboard */,
+				B6D3844E253C80D000293BF9 /* Assets.xcassets */,
+				B6D38450253C80D000293BF9 /* LaunchScreen.storyboard */,
+				B6D38453253C80D000293BF9 /* Info.plist */,
+			);
+			path = WiSwitch;
+			sourceTree = "<group>";
+		};
+		B6D3845B253C80D000293BF9 /* WiSwitchTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6D3845C253C80D000293BF9 /* WiSwitchTests.swift */,
+				B6D3845E253C80D000293BF9 /* Info.plist */,
+			);
+			path = WiSwitchTests;
+			sourceTree = "<group>";
+		};
+		B6D38466253C80D000293BF9 /* WiSwitchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B6D38467253C80D000293BF9 /* WiSwitchUITests.swift */,
+				B6D38469253C80D000293BF9 /* Info.plist */,
+			);
+			path = WiSwitchUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6D38441253C80CE00293BF9 /* WiSwitch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D3846C253C80D000293BF9 /* Build configuration list for PBXNativeTarget "WiSwitch" */;
+			buildPhases = (
+				B6D3843E253C80CE00293BF9 /* Sources */,
+				B6D3843F253C80CE00293BF9 /* Frameworks */,
+				B6D38440253C80CE00293BF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WiSwitch;
+			productName = WiSwitch;
+			productReference = B6D38442253C80CE00293BF9 /* WiSwitch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B6D38457253C80D000293BF9 /* WiSwitchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D3846F253C80D000293BF9 /* Build configuration list for PBXNativeTarget "WiSwitchTests" */;
+			buildPhases = (
+				B6D38454253C80D000293BF9 /* Sources */,
+				B6D38455253C80D000293BF9 /* Frameworks */,
+				B6D38456253C80D000293BF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6D3845A253C80D000293BF9 /* PBXTargetDependency */,
+			);
+			name = WiSwitchTests;
+			productName = WiSwitchTests;
+			productReference = B6D38458253C80D000293BF9 /* WiSwitchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B6D38462253C80D000293BF9 /* WiSwitchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D38472253C80D000293BF9 /* Build configuration list for PBXNativeTarget "WiSwitchUITests" */;
+			buildPhases = (
+				B6D3845F253C80D000293BF9 /* Sources */,
+				B6D38460253C80D000293BF9 /* Frameworks */,
+				B6D38461253C80D000293BF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6D38465253C80D000293BF9 /* PBXTargetDependency */,
+			);
+			name = WiSwitchUITests;
+			productName = WiSwitchUITests;
+			productReference = B6D38463253C80D000293BF9 /* WiSwitchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6D3843A253C80CE00293BF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Leo Li";
+				TargetAttributes = {
+					B6D38441253C80CE00293BF9 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					B6D38457253C80D000293BF9 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = B6D38441253C80CE00293BF9;
+					};
+					B6D38462253C80D000293BF9 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = B6D38441253C80CE00293BF9;
+					};
+				};
+			};
+			buildConfigurationList = B6D3843D253C80CE00293BF9 /* Build configuration list for PBXProject "WiSwitch" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6D38439253C80CE00293BF9;
+			productRefGroup = B6D38443253C80CE00293BF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6D38441253C80CE00293BF9 /* WiSwitch */,
+				B6D38457253C80D000293BF9 /* WiSwitchTests */,
+				B6D38462253C80D000293BF9 /* WiSwitchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6D38440253C80CE00293BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D38452253C80D000293BF9 /* LaunchScreen.storyboard in Resources */,
+				B6D3844F253C80D000293BF9 /* Assets.xcassets in Resources */,
+				B6D3844D253C80CF00293BF9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D38456253C80D000293BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D38461253C80D000293BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6D3843E253C80CE00293BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D3844A253C80CF00293BF9 /* ViewController.swift in Sources */,
+				B6D38446253C80CE00293BF9 /* AppDelegate.swift in Sources */,
+				B6D38448253C80CF00293BF9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D38454253C80D000293BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D3845D253C80D000293BF9 /* WiSwitchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D3845F253C80D000293BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D38468253C80D000293BF9 /* WiSwitchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6D3845A253C80D000293BF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6D38441253C80CE00293BF9 /* WiSwitch */;
+			targetProxy = B6D38459253C80D000293BF9 /* PBXContainerItemProxy */;
+		};
+		B6D38465253C80D000293BF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6D38441253C80CE00293BF9 /* WiSwitch */;
+			targetProxy = B6D38464253C80D000293BF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6D3844B253C80CF00293BF9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6D3844C253C80CF00293BF9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B6D38450253C80D000293BF9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6D38451253C80D000293BF9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6D3846A253C80D000293BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B6D3846B253C80D000293BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6D3846D253C80D000293BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NK2JDQHKG;
+				INFOPLIST_FILE = WiSwitch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leo.WiSwitch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6D3846E253C80D000293BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NK2JDQHKG;
+				INFOPLIST_FILE = WiSwitch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leo.WiSwitch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B6D38470253C80D000293BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NK2JDQHKG;
+				INFOPLIST_FILE = WiSwitchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leo.WiSwitchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiSwitch.app/WiSwitch";
+			};
+			name = Debug;
+		};
+		B6D38471253C80D000293BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NK2JDQHKG;
+				INFOPLIST_FILE = WiSwitchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leo.WiSwitchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiSwitch.app/WiSwitch";
+			};
+			name = Release;
+		};
+		B6D38473253C80D000293BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NK2JDQHKG;
+				INFOPLIST_FILE = WiSwitchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leo.WiSwitchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WiSwitch;
+			};
+			name = Debug;
+		};
+		B6D38474253C80D000293BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NK2JDQHKG;
+				INFOPLIST_FILE = WiSwitchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leo.WiSwitchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WiSwitch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6D3843D253C80CE00293BF9 /* Build configuration list for PBXProject "WiSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D3846A253C80D000293BF9 /* Debug */,
+				B6D3846B253C80D000293BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6D3846C253C80D000293BF9 /* Build configuration list for PBXNativeTarget "WiSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D3846D253C80D000293BF9 /* Debug */,
+				B6D3846E253C80D000293BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6D3846F253C80D000293BF9 /* Build configuration list for PBXNativeTarget "WiSwitchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D38470253C80D000293BF9 /* Debug */,
+				B6D38471253C80D000293BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6D38472253C80D000293BF9 /* Build configuration list for PBXNativeTarget "WiSwitchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D38473253C80D000293BF9 /* Debug */,
+				B6D38474253C80D000293BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6D3843A253C80CE00293BF9 /* Project object */;
+}
