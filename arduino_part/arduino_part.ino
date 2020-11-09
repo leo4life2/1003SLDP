@@ -13,18 +13,21 @@ void setup() {
   ArduinoUno.begin(4800);
 
   servo.attach(8);
+  Serial.println("hihihihihihh");
 
   servo.write(ang);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  Serial.println("loop");
 
   while (ArduinoUno.available()>0){ // if there is data it's gonaa be >0
+    Serial.println("insidedd");
 
     Serial.println(ArduinoUno.read());
     
-    if (ArduinoUno.parseFloat() == 0.0){
+    if (ArduinoUno.parseInt() == 1){
       
       Serial.println("servo motor moving");
       
@@ -37,7 +40,7 @@ void loop() {
       servo.write(ang);
       
     }
-    
   }
+
   delay(30);
 }

@@ -1,14 +1,23 @@
 #include <SoftwareSerial.h>
+#include <ArduinoHttpClient.h>
 #include <ESP8266WiFi.h>
 
 SoftwareSerial NodeMCU(D2, D3);
 
-const char* ssid = "399";
-const char* pw = "wifi931018";
+const char ssid[] = "399";
+const char pw[] = "wifi931018";
 
 const char* host = "dweet.io";
 
-char prev_val = 'z';
+const char serverAddress[] = "dweet.io";  // server address
+int port = 80;
+String dweetName = "wiswitch"; // use your own thing name here
+
+WiFiClient wifi;
+HttpClient client = HttpClient(wifi, serverAddress, port);
+int status = WL_IDLE_STATUS;
+
+int prev_val = 0;
 
 
 void setup() {
@@ -33,70 +42,78 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // assemble the path for the GET message:
+  String path = "/listen/for/dweets/from/" + dweetName;
 
-//  delay(500);
+  // send the GET request
+  Serial.println("making GET request");
+  client.get(path);
 
-//  Serial.print("connecting to ");
-//  Serial.println(host);
+  // read the status code and body of the response
+  int statusCode = client.responseStatusCode();
+  String response = client.responseBody();
+  Serial.print("Status code: ");
+  Serial.println(statusCode);
+  Serial.print("Response: ");
+  Serial.println(response);
+  Serial.print("Is chunked: ");
+  Serial.println(client.isResponseChunked());
 
-   // Use WiFiClient class to create TCP connections
-  WiFiClient client;
-  const int httpPort = 80;
-  if (!client.connect(host, httpPort)) {
-    Serial.println("connection failed");
-    return;
-  }
+  /*
+    Typical response is:
+    {"this":"succeeded",
+    "by":"getting",
+    "the":"dweets",
+    "with":[{"thing":"my-thing-name",
+      "created":"2016-02-16T05:10:36.589Z",
+      "content":{"sensorValue":456}}]}
+    You want "content": numberValue
+  */
   
-  // We now create a URI for the request
-  String url = "https://dweet.io:443/get/latest/dweet/for/wiswitch";
+  // now parse the response looking for "content":
+  int labelStart = response.indexOf("content\\\":");
+  // find the first { after "content":
+  int contentStart = response.indexOf("{", labelStart);
+  // find the following } and get what's between the braces:
+  int contentEnd = response.indexOf("}", labelStart);
+  String content = response.substring(contentStart + 2, contentEnd - 2);
+  Serial.println(content);
 
-  // Send request
-//  Serial.print("Requesting URL: ");
-//  Serial.println(url);
+  // now get the value after the colon, and convert to an int:
+  int valueStart = content.indexOf(":");
+  String valueString = content.substring(valueStart + 3);
+  Serial.print("Value string: ");
+  Serial.println(valueString);
+
+  handleResponse(valueString);
   
-  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
-               "Host: " + host + "\r\n" + 
-               "Connection: close\r\n\r\n");
-               
-  unsigned long timeout = millis();
-  
-  while (client.available() == 0) {
-    if (millis() - timeout > 5000) {
-      Serial.println(">>> Client Timeout !");
-      client.stop();
-      return;
-    }
-  }
-
-  // Read all the lines from the answer
-  while(client.available()){
-    String line = client.readStringUntil('\r');
-    handleResponse(line);
-  }
-
-  // Close connecting
-//  Serial.println();
-//  Serial.println("closing connection");
+  Serial.println("Wait 1 second\n");
+  delay(1000);
 }
 
 void handleResponse(String response){
   Serial.println(response);
 
-  char* lock = strstr(response.c_str(), "\"lock\":");
-  
-  if (lock > 0){
-    char val = lock[7]; // Get new value from JSON object
-//    Serial.println(val);
+  int val = prev_val;
 
-    if (val != prev_val){
-      // If value is not the same as previous one, trigger the motor
-      Serial.print("val changed! now is: ");
-      Serial.println(val);
-
-      NodeMCU.write(0);
-      
-      prev_val = val;
-    }
+  if (response == "true"){
+    val = 1;
+  } else if (response == "false"){
+    val = -1;
+  } else if (response == "neutral"){
+    val = 0;
+  } else {
+    return;
   }
+  
+  if (val != prev_val){
+    // If value is not the same as previous one, trigger the motor
+    Serial.print("val changed! now is: ");
+    Serial.println(val);
+
+    NodeMCU.write(val);
+    
+    prev_val = val;
+  }
+  
 }

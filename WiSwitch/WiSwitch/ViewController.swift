@@ -9,32 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var lightSwitch: UISwitch!
     @IBOutlet weak var keyText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
     }
     
-    @IBAction func switchValueChanged(_ sender: UISwitch) {
-        dweetSignal(key: keyText.text!, value: String(sender.isOn))
-    }
-    
-    func dweetSignal(key: String, value: String){
+    @IBAction func signInAction(_ sender: Any) {
         
-        let url = URL(string: "https://dweet.io/dweet/for/\(key)?l=\(value)")!
-
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
-            print(String(data: data, encoding: .utf8)!)
+        if keyText.text == ""{
+            let alert = UIAlertController.init(title: "Error", message: "No code entered", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            return
         }
-
-        task.resume()
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let switchViewController = storyBoard.instantiateViewController(withIdentifier: "switchVC") as! SwitchViewController
+        
+        switchViewController.dweetKey = self.keyText.text
+        
+        self.present(switchViewController, animated: true, completion: nil)
     }
-    
     
 }
 
