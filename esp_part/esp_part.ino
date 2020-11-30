@@ -1,20 +1,20 @@
 #include <SoftwareSerial.h>
-#include <ArduinoHttpClient.h>
+
 #include <ESP8266WiFi.h>
+#define PubNub_BASE_CLIENT WiFiClient
+#include <SPI.h>
+#include <PubNub.h>
 
 SoftwareSerial NodeMCU(D2, D3);
 
-const char ssid[] = "399";
-const char pw[] = "wifi931018";
+const char ssid[] = "精神三小伙";
+const char pw[] = "womendewifi666";
 
-const char* host = "dweet.io";
-
-const char serverAddress[] = "dweet.io";  // server address
-int port = 80;
-String dweetName = "wiswitch"; // use your own thing name here
+char pubkey[]  = "pub-c-7c6e3833-ad7f-455b-bf96-cd4ed9b98bcd";
+char subkey[]  = "sub-c-aabca7ee-3300-11eb-9d95-7ab25c099cb1";
+char channel[] = "channel1";
 
 WiFiClient wifi;
-HttpClient client = HttpClient(wifi, serverAddress, port);
 int status = WL_IDLE_STATUS;
 
 int prev_val = 0;
@@ -23,12 +23,18 @@ int prev_val = 0;
 void setup() {
   // -- Comms between Uno and NodeMCU
   Serial.begin(9600);
-  NodeMCU.begin(4800);
+  NodeMCU.begin(9600);
 
   pinMode(D2, INPUT);
   pinMode(D3, OUTPUT);
 
-  // -- Init Wifi
+  initWifi();
+
+  PubNub.begin(pubkey, subkey);
+  Serial.println("PubNub set up");
+}
+
+void initWifi(){
   WiFi.begin(ssid, pw);
 
   while (WiFi.status() != WL_CONNECTED){
@@ -42,67 +48,42 @@ void setup() {
 }
 
 void loop() {
-  // assemble the path for the GET message:
-  String path = "/listen/for/dweets/from/" + dweetName;
+    Serial.println("waiting for a message (subscribe)");
+    PubSubClient* client = PubNub.subscribe(channel);
+    if (!client) {
+        Serial.println("subscription error");
+        delay(1000);
+        return;
+    }
 
-  // send the GET request
-  Serial.println("making GET request");
-  client.get(path);
+    String msg;
+    SubscribeCracker ritz(client);
+    while (!ritz.finished()) {
+        ritz.get(msg);
+        if (msg.length() > 0) {
+            Serial.print("Received: ");
+            Serial.println(msg);
+            handleResponse(msg);
+        }
+    }
 
-  // read the status code and body of the response
-  int statusCode = client.responseStatusCode();
-  String response = client.responseBody();
-  Serial.print("Status code: ");
-  Serial.println(statusCode);
-  Serial.print("Response: ");
-  Serial.println(response);
-  Serial.print("Is chunked: ");
-  Serial.println(client.isResponseChunked());
+    client->stop();
 
-  /*
-    Typical response is:
-    {"this":"succeeded",
-    "by":"getting",
-    "the":"dweets",
-    "with":[{"thing":"my-thing-name",
-      "created":"2016-02-16T05:10:36.589Z",
-      "content":{"sensorValue":456}}]}
-    You want "content": numberValue
-  */
-  
-  // now parse the response looking for "content":
-  int labelStart = response.indexOf("content\\\":");
-  // find the first { after "content":
-  int contentStart = response.indexOf("{", labelStart);
-  // find the following } and get what's between the braces:
-  int contentEnd = response.indexOf("}", labelStart);
-  String content = response.substring(contentStart + 2, contentEnd - 2);
-  Serial.println(content);
-
-  // now get the value after the colon, and convert to an int:
-  int valueStart = content.indexOf(":");
-  String valueString = content.substring(valueStart + 3);
-  Serial.print("Value string: ");
-  Serial.println(valueString);
-
-  handleResponse(valueString);
-  
-  Serial.println("Wait 1 second\n");
-  delay(1000);
+    delay(500);
 }
 
 void handleResponse(String response){
-  Serial.println(response);
-
   int val = prev_val;
 
-  if (response == "true"){
+  if (response == "\"true\""){
+    Serial.println("resp is true");
     val = 1;
-  } else if (response == "false"){
+  } else if (response == "\"false\""){
+    Serial.println("resp is false");
     val = -1;
-  } else if (response == "neutral"){
-    val = 0;
   } else {
+    Serial.print("resp is");
+    Serial.println(response);
     return;
   }
   
@@ -111,7 +92,7 @@ void handleResponse(String response){
     Serial.print("val changed! now is: ");
     Serial.println(val);
 
-    NodeMCU.write(val);
+    NodeMCU.write(1);
     
     prev_val = val;
   }

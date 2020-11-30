@@ -10,7 +10,7 @@ void setup() {
   // put your setup code here, to run once:
 
   Serial.begin(9600);
-  ArduinoUno.begin(4800);
+  ArduinoUno.begin(9600);
 
   servo.attach(8);
   Serial.println("hihihihihihh");
@@ -20,14 +20,14 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.println("loop");
-
   while (ArduinoUno.available()>0){ // if there is data it's gonaa be >0
     Serial.println("insidedd");
 
-    Serial.println(ArduinoUno.read());
+    int val = ArduinoUno.read();
+
+    Serial.println(val);
     
-    if (ArduinoUno.parseInt() == 1){
+    if (val == 1){
       
       Serial.println("servo motor moving");
       
@@ -38,7 +38,6 @@ void loop() {
       }
 
       servo.write(ang);
-      
     }
   }
 

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20B755CE457BF453AC3DA388 /* Pods_WiSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D707CBFC47B36662D386B60 /* Pods_WiSwitch.framework */; };
 		B6453C162552E623009B70C9 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6453C152552E623009B70C9 /* SwitchViewController.swift */; };
 		B6D38446253C80CE00293BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D38445253C80CE00293BF9 /* AppDelegate.swift */; };
 		B6D38448253C80CF00293BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D38447253C80CF00293BF9 /* SceneDelegate.swift */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D707CBFC47B36662D386B60 /* Pods_WiSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E670CCE61D84BFFC89AE473 /* Pods-WiSwitch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiSwitch.debug.xcconfig"; path = "Target Support Files/Pods-WiSwitch/Pods-WiSwitch.debug.xcconfig"; sourceTree = "<group>"; };
 		B6453C152552E623009B70C9 /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		B6D38442253C80CE00293BF9 /* WiSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D38445253C80CE00293BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		B6D38463253C80D000293BF9 /* WiSwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiSwitchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D38467253C80D000293BF9 /* WiSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiSwitchUITests.swift; sourceTree = "<group>"; };
 		B6D38469253C80D000293BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B72DF7C43D0AA66CB5B76EDD /* Pods-WiSwitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiSwitch.release.xcconfig"; path = "Target Support Files/Pods-WiSwitch/Pods-WiSwitch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B755CE457BF453AC3DA388 /* Pods_WiSwitch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				B6D3845B253C80D000293BF9 /* WiSwitchTests */,
 				B6D38466253C80D000293BF9 /* WiSwitchUITests */,
 				B6D38443253C80CE00293BF9 /* Products */,
+				E09626585E23C2273809A108 /* Pods */,
+				D1EF914632889F9CA78A1306 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +138,23 @@
 			path = WiSwitchUITests;
 			sourceTree = "<group>";
 		};
+		D1EF914632889F9CA78A1306 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D707CBFC47B36662D386B60 /* Pods_WiSwitch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E09626585E23C2273809A108 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E670CCE61D84BFFC89AE473 /* Pods-WiSwitch.debug.xcconfig */,
+				B72DF7C43D0AA66CB5B76EDD /* Pods-WiSwitch.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6D3846C253C80D000293BF9 /* Build configuration list for PBXNativeTarget "WiSwitch" */;
 			buildPhases = (
+				D1817438EA18AD4870F3706E /* [CP] Check Pods Manifest.lock */,
 				B6D3843E253C80CE00293BF9 /* Sources */,
 				B6D3843F253C80CE00293BF9 /* Frameworks */,
 				B6D38440253C80CE00293BF9 /* Resources */,
+				8DCB9ADAD353CFA2D511144E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +282,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8DCB9ADAD353CFA2D511144E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WiSwitch/Pods-WiSwitch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WiSwitch/Pods-WiSwitch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WiSwitch/Pods-WiSwitch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1817438EA18AD4870F3706E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WiSwitch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B6D3843E253C80CE00293BF9 /* Sources */ = {
@@ -436,6 +504,7 @@
 		};
 		B6D3846D253C80D000293BF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E670CCE61D84BFFC89AE473 /* Pods-WiSwitch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,6 +514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiswitch.wi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -454,6 +524,7 @@
 		};
 		B6D3846E253C80D000293BF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B72DF7C43D0AA66CB5B76EDD /* Pods-WiSwitch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -463,6 +534,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiswitch.wi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

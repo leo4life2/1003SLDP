@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import PubNub
 
-class SwitchViewController: UIViewController {
-    var dweetKey: String!
+class SwitchViewController: UIViewController, PNEventsListener {
+    var dweetKey: String! // Not used anymore
     var switchState = false
+    
+    var client: PubNub!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Initialize and configure PubNub client instance
+        let configuration = PNConfiguration(publishKey: "pub-c-7c6e3833-ad7f-455b-bf96-cd4ed9b98bcd", subscribeKey: "sub-c-aabca7ee-3300-11eb-9d95-7ab25c099cb1")
+        
+        self.client = PubNub.clientWithConfiguration(configuration)
+        self.client.addListener(self)
 
-        // Do any additional setup after loading the view.
+        // Subscribe to demo channel with presence observation
+        self.client.subscribeToChannels(["channel1"], withPresence: true)
+        
     }
     
     @IBAction func switchTap(_ sender: UIButton) {
@@ -26,19 +36,22 @@ class SwitchViewController: UIViewController {
         }
         switchState = !switchState
         
-        dweetSignal(key: self.dweetKey, value: String(switchState))
+        sendSignal(value: String(switchState))
     }
     
-    func dweetSignal(key: String, value: String){
+    func sendSignal(value: String){
         
-        let url = URL(string: "https://dweet.io/dweet/for/\(key)?l=\(value)")!
-
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
-            print(String(data: data, encoding: .utf8)!)
-        }
-
-        task.resume()
+        self.client.publish(value, toChannel: "channel1", withCompletion: nil)
+        
+        
+//        let url = URL(string: "https://dweet.io/dweet/for/\(key)?l=\(value)")!
+//
+//        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+//            guard let data = data else { return }
+//            print(String(data: data, encoding: .utf8)!)
+//        }
+//
+//        task.resume()
     }
     
 
