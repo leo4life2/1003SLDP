@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20B755CE457BF453AC3DA388 /* Pods_WiSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D707CBFC47B36662D386B60 /* Pods_WiSwitch.framework */; };
 		B6453C162552E623009B70C9 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6453C152552E623009B70C9 /* SwitchViewController.swift */; };
+		B6BD17D32575334D005BD2FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD17D22575334D005BD2FA /* RegisterViewController.swift */; };
 		B6D38446253C80CE00293BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D38445253C80CE00293BF9 /* AppDelegate.swift */; };
 		B6D38448253C80CF00293BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D38447253C80CF00293BF9 /* SceneDelegate.swift */; };
 		B6D3844A253C80CF00293BF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D38449253C80CF00293BF9 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		0D707CBFC47B36662D386B60 /* Pods_WiSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E670CCE61D84BFFC89AE473 /* Pods-WiSwitch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiSwitch.debug.xcconfig"; path = "Target Support Files/Pods-WiSwitch/Pods-WiSwitch.debug.xcconfig"; sourceTree = "<group>"; };
 		B6453C152552E623009B70C9 /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
+		B6BD17D22575334D005BD2FA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B6D38442253C80CE00293BF9 /* WiSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D38445253C80CE00293BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6D38447253C80CF00293BF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				B6D38445253C80CE00293BF9 /* AppDelegate.swift */,
 				B6D38447253C80CF00293BF9 /* SceneDelegate.swift */,
 				B6D38449253C80CF00293BF9 /* ViewController.swift */,
+				B6BD17D22575334D005BD2FA /* RegisterViewController.swift */,
 				B6453C152552E623009B70C9 /* SwitchViewController.swift */,
 				B6D3844B253C80CF00293BF9 /* Main.storyboard */,
 				B6D3844E253C80D000293BF9 /* Assets.xcassets */,
@@ -331,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D3844A253C80CF00293BF9 /* ViewController.swift in Sources */,
+				B6BD17D32575334D005BD2FA /* RegisterViewController.swift in Sources */,
 				B6D38446253C80CE00293BF9 /* AppDelegate.swift in Sources */,
 				B6453C162552E623009B70C9 /* SwitchViewController.swift in Sources */,
 				B6D38448253C80CF00293BF9 /* SceneDelegate.swift in Sources */,
@@ -514,7 +518,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiswitch.wi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -534,7 +538,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiswitch.wi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

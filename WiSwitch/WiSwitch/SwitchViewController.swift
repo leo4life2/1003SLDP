@@ -10,7 +10,6 @@ import UIKit
 import PubNub
 
 class SwitchViewController: UIViewController, PNEventsListener {
-    var dweetKey: String! // Not used anymore
     var switchState = false
     
     var client: PubNub!
@@ -43,15 +42,6 @@ class SwitchViewController: UIViewController, PNEventsListener {
         
         self.client.publish(value, toChannel: "channel1", withCompletion: nil)
         
-        
-//        let url = URL(string: "https://dweet.io/dweet/for/\(key)?l=\(value)")!
-//
-//        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-//            guard let data = data else { return }
-//            print(String(data: data, encoding: .utf8)!)
-//        }
-//
-//        task.resume()
     }
     
 
